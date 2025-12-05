@@ -1,0 +1,140 @@
+Please press Enter to activate this console. 
+/ # uname -a
+Linux (none) 4.19.325 #1 SMP Thu Dec 4 13:45:05 UTC 2025 armv7l GNU/Linux
+/ # ls -l
+total 0
+drwxrwxr-x    2 1000     1000             0 Dec  4 23:25 bin
+drwxrwxr-x    2 1000     1000             0 Dec  4 23:32 boot
+drwxrwxr-x    3 1000     1000             0 Dec  4 23:40 dev
+drwxrwxr-x    3 1000     1000             0 Dec  4 23:36 etc
+lrwxrwxrwx    1 1000     1000            11 Dec  4 23:31 init -> bin/busybox
+drwxrwxr-x    3 1000     1000             0 Dec  4 23:35 lib
+lrwxrwxrwx    1 1000     1000            11 Dec  4 23:25 linuxrc -> bin/busybox
+dr-xr-xr-x   90 root     root             0 Jan  1  1970 proc
+drwxrwxr-x    2 1000     1000             0 Dec  4 23:28 root
+drwxrwxr-x    2 1000     1000             0 Dec  4 23:25 sbin
+dr-xr-xr-x   12 root     root             0 Dec  4 23:40 sys
+drwxrwxr-x    2 1000     1000             0 Dec  4 23:28 tmp
+drwxrwxr-x    4 1000     1000             0 Dec  4 23:25 usr
+/ # dmesg | tail -20
+[    1.795301] usbcore: registered new interface driver usbhid
+[    1.795563] usbhid: USB HID core driver
+[    1.799379] NET: Registered protocol family 10
+[    1.804209] Segment Routing with IPv6
+[    1.804977] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    1.806674] NET: Registered protocol family 17
+[    1.808463] can: controller area network core (rev 20170425 abi 9)
+[    1.809463] NET: Registered protocol family 29
+[    1.809665] can: raw protocol (rev 20170425)
+[    1.810057] can: broadcast manager protocol (rev 20170425 t)
+[    1.810302] can: netlink gateway (rev 20170425) max_hops=1
+[    1.811082] Key type dns_resolver registered
+[    1.811583] ThumbEE CPU extension supported.
+[    1.812134] Registering SWP/SWPB emulation handler
+[    1.813640] Loading compiled-in X.509 certificates
+[    1.823621] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[    1.828119] rtc-pl031 9010000.pl031: setting system clock to 2025-12-04 23:40:56 UTC (1764891656)
+[    1.835564] uart-pl011 9000000.pl011: no DMA platform data
+[    1.940877] Freeing unused kernel memory: 2048K
+[    1.957237] Run /init as init process
+/ # busybox
+BusyBox v1.31.1 (2025-12-04 23:22:33 UTC) multi-call binary.
+BusyBox is copyrighted by many authors between 1998-2015.
+Licensed under GPLv2. See source distribution for detailed
+copyright notices.
+
+Usage: busybox [function [arguments]...]
+   or: busybox --list[-full]
+   or: busybox --show SCRIPT
+   or: busybox --install [-s] [DIR]
+   or: function [arguments]...
+
+	BusyBox is a multi-call binary that combines many common Unix
+	utilities into a single executable.  Most people will create a
+	link to busybox for each function they wish to use and BusyBox
+	will act like whatever it was invoked as.
+
+Currently defined functions:
+	[, [[, acpid, add-shell, addgroup, adduser, adjtimex, arch, arp,
+	arping, ash, awk, base64, basename, bc, beep, blkdiscard, blkid,
+	blockdev, bootchartd, brctl, bunzip2, bzcat, bzip2, cal, cat, chat,
+	chattr, chgrp, chmod, chown, chpasswd, chpst, chroot, chrt, chvt,
+	cksum, clear, cmp, comm, conspy, cp, cpio, crond, crontab, cryptpw,
+	cttyhack, cut, date, dc, dd, deallocvt, delgroup, deluser, depmod,
+	devmem, df, dhcprelay, diff, dirname, dmesg, dnsd, dnsdomainname,
+	dos2unix, dpkg, dpkg-deb, du, dumpkmap, dumpleases, echo, ed, egrep,
+	eject, env, envdir, envuidgid, ether-wake, expand, expr, factor,
+	fakeidentd, fallocate, false, fatattr, fbset, fbsplash, fdflush,
+	fdformat, fdisk, fgconsole, fgrep, find, findfs, flock, fold, free,
+	freeramdisk, fsck, fsck.minix, fsfreeze, fstrim, fsync, ftpd, ftpget,
+	ftpput, fuser, getopt, getty, grep, groups, gunzip, gzip, halt, hd,
+	hdparm, head, hexdump, hexedit, hostid, hostname, httpd, hush, hwclock,
+	i2cdetect, i2cdump, i2cget, i2cset, i2ctransfer, id, ifconfig, ifdown,
+	ifenslave, ifplugd, ifup, inetd, init, insmod, install, ionice, iostat,
+	ip, ipaddr, ipcalc, ipcrm, ipcs, iplink, ipneigh, iproute, iprule,
+	iptunnel, kbd_mode, kill, killall, killall5, klogd, last, less, link,
+	linux32, linux64, linuxrc, ln, loadfont, loadkmap, logger, login,
+	logname, logread, losetup, lpd, lpq, lpr, ls, lsattr, lsmod, lsof,
+	lspci, lsscsi, lsusb, lzcat, lzma, lzop, makedevs, makemime, man,
+	md5sum, mdev, mesg, microcom, mkdir, mkdosfs, mke2fs, mkfifo,
+	mkfs.ext2, mkfs.minix, mkfs.vfat, mknod, mkpasswd, mkswap, mktemp,
+	modinfo, modprobe, more, mount, mountpoint, mpstat, mt, mv, nameif,
+	nanddump, nandwrite, nbd-client, nc, netstat, nice, nl, nmeter, nohup,
+	nologin, nproc, nsenter, nslookup, ntpd, nuke, od, openvt, partprobe,
+	passwd, paste, patch, pgrep, pidof, ping, ping6, pipe_progress,
+	pivot_root, pkill, pmap, popmaildir, poweroff, powertop, printenv,
+	printf, ps, pscan, pstree, pwd, pwdx, raidautorun, rdate, rdev,
+	readahead, readlink, readprofile, realpath, reboot, reformime,
+	remove-shell, renice, reset, resize, resume, rev, rm, rmdir, rmmod,
+	route, rpm, rpm2cpio, rtcwake, run-init, run-parts,/ # uname -a
+Linux (none) 4.19.325 #1 SMP Thu Dec 4 13:45:05 UTC 2025 armv7l GNU/Linux
+/ # ls -l
+total 0
+drwxrwxr-x    2 1000     1000             0 Dec  4 23:25 bin
+drwxrwxr-x    2 1000     1000             0 Dec  4 23:32 boot
+drwxrwxr-x    3 1000     1000             0 Dec  4 23:40 dev
+drwxrwxr-x    3 1000     1000             0 Dec  4 23:36 etc
+lrwxrwxrwx    1 1000     1000            11 Dec  4 23:31 init -> bin/busybox
+drwxrwxr-x    3 1000     1000             0 Dec  4 23:35 lib
+lrwxrwxrwx    1 1000     1000            11 Dec  4 23:25 linuxrc -> bin/busybox
+dr-xr-xr-x   90 root     root             0 Jan  1  1970 proc
+drwxrwxr-x    2 1000     1000             0 Dec  4 23:28 root
+drwxrwxr-x    2 1000     1000             0 Dec  4 23:25 sbin
+dr-xr-xr-x   12 root     root             0 Dec  4 23:40 sys
+drwxrwxr-x    2 1000     1000             0 Dec  4 23:28 tmp
+drwxrwxr-x    4 1000     1000             0 Dec  4 23:25 usr
+/ # dmesg | grep init
+[    0.000000] random: crng init done
+[    0.000000] Memory: 405356K/524288K available (12288K kernel code, 1618K rwdata, 4796K rodata, 2048K init, 394K bss, 53396K reserved, 65536K cma-reserved, 0K highmem)
+[    0.000000]       .init : 0x(ptrval) - 0x(ptrval)   (2048 kB)
+[    0.065667] devtmpfs: initialized
+[    0.090715] pinctrl core: initialized pinctrl subsystem
+[    0.208285] SCSI subsystem initialized
+[    0.340487] Trying to unpack rootfs image as initramfs...
+[    1.549589] Freeing initrd memory: 25140K
+[    1.665250] SuperH (H)SCI(F) driver initialized
+[    1.666376] msm_serial: driver initialized
+[    1.666659] STMicroelectronics ASC driver initialized
+[    1.667470] STM32 USART driver initialized
+[    1.957237] Run /init as init process
+/ # busybox --help | head -10
+BusyBox v1.31.1 (2025-12-04 23:22:33 UTC) multi-call binary.
+BusyBox is copyrighted by many authors between 1998-2015.
+Licensed under GPLv2. See source distribution for detailed
+copyright notices.
+
+Usage: busybox [function [arguments]...]
+   or: busybox --list[-full]
+   or: busybox --show SCRIPT
+   or: busybox --install [-s] [DIR]
+   or: function [arguments]...
+/ # poweroff
+/ # umount: can't unmount /: Invalid argument
+swapoff: can't open '/etc/fstab': No such file or directory
+The system is going down NOW!
+Sent SIGTERM to all processes
+Sent SIGKILL to all processes
+Requesting system poweroff
+[  684.027685] reboot: Power down
+admin@amdHARAM:~/repos/busybox$ 
+
